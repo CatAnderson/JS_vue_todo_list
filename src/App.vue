@@ -99,5 +99,6 @@ button, input[type="submit"]{
   color: #fff;
   cursor: pointer;
   border: 1px solid #000;
+  margin: 30px;
 }
 </style>
