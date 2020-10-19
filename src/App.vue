@@ -1,7 +1,10 @@
 <template>
     <div id="app">
         <ul>
-            <li v-for="task in tasks">{{ task }}</li>
+            <li v-for="task in tasks">
+                <span> {{ task.name }} </span>
+                <span> {{ task.priority }} </span>
+            </li>
         </ul>
 
         <form v-on:submit.prevent="saveNewTask">
@@ -16,11 +19,15 @@
 export default {
     data(){
         return {
-            tasks: ["Buy shopping", "Clean bathroom", "Car's MOT"],
+            tasks: [
+                { name: "Buy shopping", priority: false },
+                { name: "Clean bathroom", priority: false },
+                { name: "Car's MOT", priority: false }
+                ],
             newTask: ""
         }
     },
-    
+
     methods: {
         saveNewTask: function(){
             this.tasks.push(this.newTask);
